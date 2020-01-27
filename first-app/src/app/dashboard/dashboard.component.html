@@ -1,0 +1,77 @@
+
+<div class="button">
+    <button (click)="listPatient()"  >Patient</button>
+    <div *ngFor ="let data of patients|keyvalue">
+        Patient Name:{{data.value.userName|json}}<br>
+        Disease:{{data.value.patientDisease|json}}<br>
+       
+        <br>
+    </div>
+       <!-- {{data |json}}</p> -->
+        <br>
+        <br>
+    <button  (click)="listDoctor()">Doctor</button>
+     <div *ngFor ="let data of doctor|keyvalue">
+      Doctor Name:{{data.value.userName|json}}<br>
+      Doctor Specialization:{{data.value.doctorSpecialization|json}}<br>
+        <br>
+    </div>
+        <br>
+        <!-- <form (ngSubmit)="createPatient()">
+            patientId:<br>
+            <input type="number" name="patientId" [(ngModel)]="patientDetails.fk_user_id">
+            <br>
+            patientName:<br>
+            <input type="text" name="patientName" [(ngModel)]="patientDetails.user_name">
+            <br>
+            patientAge:<br>
+            <input type="text" name="patientAge" [(ngModel)]="patientDetails.user_age">
+            <br>
+            patientGender:<br>
+            <input type="text" name="patientGender" [(ngModel)]="patientDetails.user_gender">
+            <br>
+            patientMobileNumber:<br>
+            <input type="text" name="patientMobileNumber"  [(ngModel)]="patientDetails.user_mobile_number" >
+            <br>
+            patientMailId:<br>
+            <input type="text" name="patientMailId" [(ngModel)]="patientDetails.user_email_id"  >
+            <br>
+            patientAddressLine1:<br>
+            <input type="text" name="patientAddressLine1" [(ngModel)]="patientDetails.user_address_line1" >
+            <br>
+            patientAddressLine2:<br>
+            <input type="text" name="patientAddressLine2" [(ngModel)]="patientDetails.user_address_line2">
+            <br>
+            patientAddressLine3:<br>
+            <input type="text" name="patientAddressLine3" [(ngModel)]="patientDetails.user_address_line3">
+            <br>
+            patientDisease:<br>
+            <input type="text" name="patientDisease" [(ngModel)]="patientDetails.patient_disease">
+            <br>
+            <br>
+            <button type="submit">Create</button>
+          </form> 
+          <form action="deletepatient()">
+            patientId:<br>
+            <input type="number" name="patientId" [(ngModel)]="patientDetails.fk_user_id">
+            <br>
+            <br>
+            <input type="submit" value="Delete">
+        </form>   -->
+         <form [formGroup]="patientFormGroup" (ngSubmit)="createPatient()">
+        <input type="text" formControlName="userId" >
+        <input type="text" formControlName="userName" >
+    <input type="text" formControlName="userPassword" >
+    <input type="text" formControlName="usergender" >
+    <input type="text" formControlName="userAge" >
+    <input type="text" formControlName="userMobileNumber" >
+    <input type="text" formControlName="userEmailId" >
+    <input type="text" formControlName="userAddressLine1" >
+    <input type="text" formControlName="userAddressLine2" >
+    <input type="text" formControlName="userAddressLine3" >
+    <input type="text" formControlName="userRoleId">
+    <input type="text" formControlName="pkPatientId">
+    <input type="text" formControlName="fkUserId">
+    <input type="text" formControlName="patientDisease">
+    <input type="submit" value="Create">
+</form>  -->
